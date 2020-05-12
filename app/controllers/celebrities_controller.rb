@@ -36,6 +36,6 @@ private
   end
 
   def celebrity_params
-    params.require(:celebrity).permit(:name, :description, :price_per_day, :location)
+    params.require(:celebrity).permit(:name, :description, :price_per_day, :location, photos: [])
   end
 end

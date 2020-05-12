@@ -4,3 +4,6 @@
 <p>  <%= @celebrity.location %> </p>
 <p>  <%= @celebrity.price_per_day %> </p>
 
+<% @celebrity.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
