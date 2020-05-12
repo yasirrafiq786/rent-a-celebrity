@@ -1,8 +1,14 @@
-<%= simple_form_for(@celebrity) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :price_per_day %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-sm-2">
+      <%= simple_form_for(@celebrity) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description, as: :text %>
+        <%= f.input :location %>
+        <%= f.input :price_per_day %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
