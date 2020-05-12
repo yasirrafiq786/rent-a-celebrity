@@ -1,5 +1,7 @@
 class CelebritiesController < ApplicationController
+
  before_action :set_celebrity, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @celebrities = Celebrity.all
@@ -11,7 +13,11 @@ class CelebritiesController < ApplicationController
     @celebrity = Celebrity.new
   end
 
+
  def edit; end
+
+ 
+
 
   def update
     @celebrity = Celebrity.update(celebrity_params)
@@ -41,6 +47,6 @@ private
   end
 
   def celebrity_params
-    params.require(:celebrity).permit(:name, :description, :price_per_day, :location)
+    params.require(:celebrity).permit(:name, :description, :price_per_day, :location, photos: [])
   end
 end
