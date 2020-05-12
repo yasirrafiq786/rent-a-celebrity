@@ -21,6 +21,8 @@ class CelebritiesController < ApplicationController
 
  def create
     @celebrity = Celebrity.new(celebrity_params)
+    @celebrity.user = current_user
+
     if @celebrity.save
       redirect_to celebrity_path(@celebrity)
     else
