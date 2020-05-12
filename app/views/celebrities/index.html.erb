@@ -1,1 +1,16 @@
-<h1> Test </h1>
+
+<div class="container">
+  <h1> Celebrities </h1>
+</div>
+
+<div class="container">
+  <% @celebrities.each_slice(3) do |celebrity_grouped| %>
+    <div class="row">
+      <% celebrity_grouped.each do |celebrity| %>
+        <div class="col-sm">
+          <%= render 'shared/celebrity_card', celebrity: celebrity %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
