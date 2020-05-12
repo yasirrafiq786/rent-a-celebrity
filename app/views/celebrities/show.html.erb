@@ -4,3 +4,6 @@
 <p>  <%= @celebrity.location %> </p>
 <p>  <%= @celebrity.price_per_day %> </p>
 
+<%= link_to 'Remove Celebrity', celebrity_path(@celebrity),
+    method: :delete,
+    data: {confirm: "Do you want to remove this Celebrity?"} %>
