@@ -1,5 +1,5 @@
 class CelebritiesController < ApplicationController
-  before_action: :set_celebrity, only: [:show, :edit, :update]
+  before_action :set_celebrity, only: [:show, :edit, :update]
 
   def index
     @celebrities = Celebrity.all
