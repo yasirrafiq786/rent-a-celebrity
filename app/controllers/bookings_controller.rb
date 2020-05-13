@@ -10,7 +10,6 @@ class BookingsController < ApplicationController
 
     def create
         @booking = Booking.new(booking_params)
-        @user = current_user
         @celebrity = Celebrity.find(params[:celebrity_id])
         @booking.user = current_user
         @booking.celebrity = @celebrity
@@ -27,9 +26,7 @@ class BookingsController < ApplicationController
     end
 
     def update
-        @booking = Booking.find(params[:id])
-        @booking.update_attributes(booking_params)
-        redirect_to bookings_path
+      
     end
 
     private
