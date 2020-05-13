@@ -16,7 +16,7 @@ class CelebritiesController < ApplicationController
 
  def edit; end
 
- 
+
 
 
   def update
