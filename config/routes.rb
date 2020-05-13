@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get '/bookings', to:'pages#bookings'
-  patch '/confirm_booking', to:'pages#confirm_booking', as: :confirm
+  patch '/confirm_booking/:id', to:'pages#confirm_booking', as: :confirm
 
   resources :celebrities do
     resources :bookings, only: [:new, :create]

@@ -1,5 +1,5 @@
 <% @bookings.each do |booking|%>
 <ol>
-<li><%= booking.celebrity.name %> - Owner: <%= booking.celebrity.user.email%> Requesting: <%= booking.user.email%></li>
+<li><%= booking.celebrity.name %> - Owner: <%= booking.celebrity.user.email%> Requesting: <%= booking.user.email%> - Status: <%= booking.status%> <%= link_to 'Confirm', confirm_path(booking), method: :patch %></li>
 </ol>
 <% end%>
