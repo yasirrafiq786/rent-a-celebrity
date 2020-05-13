@@ -1,8 +1,8 @@
-<div class="card" style="width: 18rem;">
-  <img src="<%= celebrity.photos.first %>" class="card-img-top" alt="...">
+<div class="card" style="width: 100%;">
+  <%= cl_image_tag celebrity.photos.first.key, height: 300, width: 400, crop: :fill, style: "width: 100%; object-fit: cover;" %>
   <div class="card-body">
     <h5 class="card-title"> <%= celebrity.name %> </h5>
     <p class="card-text"> <%= celebrity.description %> </p>
-    <a href="<%= celebrity_path(celebrity) %>" class="btn btn-primary">Book</a>
+    <a href="<%= celebrity_path(celebrity) %>" class="btn btn-primary">Description</a>
   </div>
 </div>

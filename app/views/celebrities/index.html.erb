@@ -4,13 +4,9 @@
 </div>
 
 <div class="container">
-  <% @celebrities.each_slice(3) do |celebrity_grouped| %>
-    <div class="row">
-      <% celebrity_grouped.each do |celebrity| %>
-        <div class="col-sm">
-          <%= render 'shared/celebrity_card', celebrity: celebrity %>
-        </div>
-      <% end %>
-    </div>
+  <div class="cards">
+  <% @celebrities.each do |celebrity| %>
+    <%= render 'shared/celebrity_card', celebrity: celebrity %>
   <% end %>
+  </div>
 </div>
