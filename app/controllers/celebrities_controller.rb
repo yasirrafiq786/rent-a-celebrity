@@ -1,5 +1,7 @@
 class CelebritiesController < ApplicationController
-  before_action :set_celebrity, only: [:show, :edit, :update]
+
+ before_action :set_celebrity, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @celebrities = Celebrity.all
@@ -11,14 +13,18 @@ class CelebritiesController < ApplicationController
     @celebrity = Celebrity.new
   end
 
-  def edit; end
+
+ def edit; end
+
+
+
 
   def update
     @celebrity = Celebrity.update(celebrity_params)
     redirect_to celebrity_path(@celebrity)
   end
 
- def create
+  def create
     @celebrity = Celebrity.new(celebrity_params)
     @celebrity.user = current_user
 
@@ -27,6 +33,11 @@ class CelebritiesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @celebrity.destroy
+    redirect_to celebrities_path(@celebrity)
   end
 
 private
