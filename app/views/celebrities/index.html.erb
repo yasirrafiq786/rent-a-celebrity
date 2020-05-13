@@ -9,6 +9,8 @@
       <% celebrity_grouped.each do |celebrity| %>
         <div class="col-sm">
           <%= render 'shared/celebrity_card', celebrity: celebrity %>
+          <p class="card-text"> <%= link_to 'Details', celebrity_path(celebrity) %> </p>
+
         </div>
       <% end %>
     </div>

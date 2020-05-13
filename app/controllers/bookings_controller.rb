@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
 
     def show
-        @booking = Booking.find(params[:celebrity_id])
+        @booking = Booking.find(params[:id])
     end
     def new
         @celebrity = Celebrity.find(params[:celebrity_id])
@@ -16,7 +16,20 @@ class BookingsController < ApplicationController
         @booking.celebrity = @celebrity
         @booking.status = 'pending'
         if @booking.save
-            redirect_to 
+            redirect_to booking_path(@booking)
+        else
+            render :new
+        end
+    end
+
+    def edit
+        @booking = Booking.find(params[:id])
+    end
+
+    def update
+        @booking = Booking.find(params[:id])
+        @booking.update_attributes(booking_params)
+        redirect_to bookings_path
     end
 
     private
