@@ -14,7 +14,8 @@ class BookingsController < ApplicationController
         @booking.user = current_user
         @booking.celebrity = @celebrity
         @booking.status = 'pending'
-        if @booking.save 
+        if @booking.start_date < @booking.end_date
+            @booking.save 
             redirect_to bookings_path
         else
             render 'new'
