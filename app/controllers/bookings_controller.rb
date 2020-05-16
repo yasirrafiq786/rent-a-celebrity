@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
     def show
         @booking = Booking.find(params[:id])
     end
+
     def new
         @celebrity = Celebrity.find(params[:celebrity_id])
         @booking = Booking.new

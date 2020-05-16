@@ -2,10 +2,14 @@ class CelebritiesController < ApplicationController
 
  before_action :set_celebrity, only: [:show, :edit, :update, :destroy]
 
-
   def index
+    if params[:query].present?
+      sql_query = "name ILIKE :query"
+      @celebrities = Celebrity.where(sql_query, query: "%#{params[:query]}%")
+    else    
     @celebrities = Celebrity.all
   end
+end
 
   def show
     @celebrities = Celebrity.geocoded
