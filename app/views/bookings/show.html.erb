@@ -1,3 +1,13 @@
-<%= @booking.celebrity.name %>
+<h1> Celebrity: </h1>
+<p> <%= @booking.celebrity.name %> </p>
+<p> <%= @booking.celebrity.description %> </p>
 
-<%= @booking.celebrity.description %>
+<h1> Start Date </h1>
+<p> <%= @booking.start_date  %> </p>
+
+<h1> End Date </h1>
+<p> <%= @booking.end_date  %>  </p>
+
+
+<h1> Total Price </h1>
+<p> $<%= @booking.total_price %>  </p>
