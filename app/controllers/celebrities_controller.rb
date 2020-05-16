@@ -8,6 +8,7 @@ class CelebritiesController < ApplicationController
       @celebrities = Celebrity.where(sql_query, query: "%#{params[:query]}%")
     else    
     @celebrities = Celebrity.all
+    @chatroom = Chatroom.first
   end
 end
 
