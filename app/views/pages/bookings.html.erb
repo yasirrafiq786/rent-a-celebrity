@@ -1,4 +1,5 @@
 
+
   <table class="table table-bordered">
         <tbody>
           <thead>
@@ -16,6 +17,7 @@
               <td>
                 <% if current_user == booking.celebrity.user%>
                 <%= link_to 'Confirm', confirm_path(booking), method: :patch %>
+                <p> Status: <%= booking.status%> </p>
                 <% end %>
               </td>
             </tr>
