@@ -7,7 +7,16 @@ class CelebritiesController < ApplicationController
     @celebrities = Celebrity.all
   end
 
-  def show; end
+  def show
+    @celebrities = Celebrity.geocoded
+
+    @markers = @celebrities.map do |celebrity|
+      {
+        lat: celebrity.latitude,
+        lng: celebrity.longitude
+      }
+    end
+  end
 
   def new
     @celebrity = Celebrity.new
