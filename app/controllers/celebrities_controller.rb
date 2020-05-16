@@ -5,6 +5,7 @@ class CelebritiesController < ApplicationController
 
   def index
     @celebrities = Celebrity.all
+    @chatroom = Chatroom.first
   end
 
   def show; end

@@ -13,7 +13,7 @@
   <%= link_to "Browse Celebrities", celebrities_path, :class => "nav-link" %>
   <%= link_to "Add a Celebrity", new_celebrity_path, :class => "nav-link" %>
   <%= link_to "View Bookings", bookings_path, :class => "nav-link" %>
-  <%= link_to "Messages", "#", :class => "nav-link" %>
+  <%= link_to "Messages", chatroom_path(@chatroom), :class => "nav-link" %>
 
    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
