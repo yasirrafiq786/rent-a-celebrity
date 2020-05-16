@@ -1,3 +1,4 @@
+
   <% @bookings.each do |booking|%>
     <ol>
       <li><%= booking.celebrity.name %> - Owner: <%= booking.celebrity.user.email%> Requesting: <%= booking.user.email%> - Status: <%= booking.status%> 
