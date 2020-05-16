@@ -4,9 +4,8 @@
   <% end %>
   <div class="card-body">
     <h5 class="card-title"> <%= celebrity.name %> </h5>
-    <p class="card-text"> <%= celebrity.location %> </p>
-        <p class="card-text"> $<%= celebrity.price_per_day %> per day</p>
-    <a href="<%= new_celebrity_booking_path(celebrity) %>" class="btn btn-primary">Book</a>
-    <%= link_to 'Details', celebrity_path(celebrity) %>
+    <p class="card-text"> <%= celebrity.description %> </p>
+    <%= link_to 'Book', new_celebrity_booking_path(celebrity), class: "button-style" %>
+    <%= link_to 'Details', celebrity_path(celebrity), class: "button-style" %>
   </div>
 </div>

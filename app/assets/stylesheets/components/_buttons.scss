@@ -1,0 +1,23 @@
+.button-style {
+      width: 50%;
+      display: grid;
+      padding: .5rem .8rem;
+      text-align: center;
+      vertical-align: middle;
+      margin: auto;
+      margin-bottom: 10px;
+      cursor: pointer;
+      background-color: $maroon;
+      color: $platinum;
+      text-transform: uppercase;
+      transition: background-color .4s, color .4s, transform .1s;
+
+      &:hover {
+        color: $maroon;
+        box-shadow: 0 0 24px rgba(black, .2);
+        background-color: $platinum;
+        border-color: maroon;
+        border: 1px solid black;
+      }
+    }
+
