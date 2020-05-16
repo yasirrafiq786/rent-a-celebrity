@@ -4,5 +4,5 @@ class Celebrity < ApplicationRecord
   validates :price_per_day, presence: true
   validates :description, presence: true
   has_many_attached :photos
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 end
