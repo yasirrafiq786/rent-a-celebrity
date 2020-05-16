@@ -1,15 +1,3 @@
-<h1> <%= @celebrity.name %> </h1>
-
-<p>  <%= @celebrity.description %> </p>
-<p>  <%= @celebrity.location %> </p>
-<p>  <%= @celebrity.price_per_day %> </p>
-
-<% @celebrity.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<%= link_to 'Book Me', new_celebrity_booking_path(@celebrity) %>
-<%= link_to 'Remove Celebrity', celebrity_path(@celebrity),
-    method: :delete,
-    data: {confirm: "Do you want to remove this Celebrity?"} %>
-
-
+<div class="container py-4">
+  <%= render 'shared/celebrity_detailed_card', celebrity: @celebrity %>
+</div>

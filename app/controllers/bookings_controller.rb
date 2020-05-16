@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+#    after_action :set_total_price, only: :create
 
     def show
         @booking = Booking.find(params[:id])
@@ -27,8 +28,17 @@ class BookingsController < ApplicationController
     end
 
     def update
-      
+        @booking = Booking.find(params[:id])
+        @booking.update(booking_params)
     end
+
+    # def set_total_price
+    #     raise
+    #     @booking = Booking.find(params[:id])
+    #     days = @booking.end_date - @booking.start_date
+    #     total_price = @booking.celebrity.price_per_day * days.to_i
+    #     @booking.total_price = total_price
+    # end
 
     private
 
