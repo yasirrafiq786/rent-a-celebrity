@@ -1,19 +1,34 @@
 <div class="card-detailed" style="width: 100%;">
-  <%= cl_image_tag celebrity.photos.first.key, height: 300, width: 400, crop: :fill, style: "width: 100%; object-fit: cover;" %>
-  <div class="card-body">
-    <h5 class="card-title card-title-detailed"> <%= celebrity.name %> </h5>
-    <p class="card-text"> <%= celebrity.description %> </p>
+  <div class="card-flex">
+    <%= cl_image_tag celebrity.photos.first.key, height: 800, width: 600, crop: :fill, style: "width: 250%; object-fit: cover; flex-grow: 0; padding: 24px 8px;" %>
+    <div class="body card-body-container">
+      <div class="card-title card-title-detailed">
+        <h3 class="card-title"> <%= celebrity.name %> </h5>
+        <h5 class="card-text"> $<%= celebrity.price_per_day %> per day </p>
+      </div>
+      <div class="card-body card-body-info">
+        <p class="card-text"> <%= celebrity.description %> </p>
+      </div>
+      <div class="card-buttons-layout">
+        <div>
+          <a href="<%= new_celebrity_booking_path(celebrity) %>" class="btn btn-primary">Book</a>
+        </div>
+        <div class="card-buttons-layout">
+          <%= link_to edit_celebrity_path(celebrity),
+            style: "padding: 8px" do %>
+            <i class="fas fa-user-edit"></i>
+          <% end %>
+          <%= link_to celebrity_path(celebrity),
+              method: :delete,
+              data: {confirm: "Do you want to remove this celebrity?"},
+              style: "padding: 8px" do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="card-body card-body-info">
-    <p class="card-text"> Location: <%= celebrity.location %> </p>
-    <p class="card-text"> $<%= celebrity.price_per_day %> per day </p>
-  </div>
-  <div class="body">
-    <a href="<%= new_celebrity_booking_path(celebrity) %>" class="btn btn-primary">Book</a>
-
-    <%= link_to 'Delete', celebrity_path(celebrity),
-        method: :delete,
-        data: {confirm: "Do you want to remove this celebrity?"} %>
-    <%= link_to 'Edit', edit_celebrity_path(celebrity) %>
+  <div class="map">
+    <%= image_tag("map_filler.jpeg", style: "width: 100%") %>
   </div>
 </div>
