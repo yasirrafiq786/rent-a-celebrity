@@ -5,11 +5,61 @@
   font-size: 16px;
 }
 
-.nav-link {
-  color: $maroon;
+nav{
+  width: 100vw;
   background-color: $platinum;
 }
 
-.search { 
+
+
+.nav-link {
+  text-decoration: none;
+  display: block;
+  color: $black;
+  padding: 2vw;
+
+  &:hover{
+  background-color: $maroon;
+  color: $platinum ;
+  }
+}
+
+ul{
+  margin: 0;
+  padding: 0;
   display: flex;
+}
+
+body{
+  margin: 0;
+}
+
+li{
+  list-style-type: none;
+  margin: 0 2vw;
+  font-size: 2vh;
+}
+
+button{
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  ul{
+    flex-direction: column;
+  }
+
+  li{
+    margin: 0;
+  }
+
+ .nav-link{
+    display: block;
+  }
+
+  button{
+    display: block;
+    cursor: pointer;
+    align-self: flex-start;
+  }
 }
