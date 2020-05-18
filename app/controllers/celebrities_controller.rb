@@ -24,7 +24,7 @@ end
 
 
   def update
-    @celebrity = Celebrity.update(celebrity_params)
+    @celebrity.update(celebrity_params)
     redirect_to celebrity_path(@celebrity)
   end
 

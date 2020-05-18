@@ -10,8 +10,9 @@
           <% @bookings.each do |booking|%>
             <tr>
               <td>
-                <% if current_user == booking.celebrity.user %>
+                <% if current_user == booking.user %>
                 <%= link_to booking.celebrity.name, booking_path(booking) %>
+                <%= booking.status %>
                 <% end %>
               </td>
               <td>
