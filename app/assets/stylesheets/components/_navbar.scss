@@ -1,48 +1,82 @@
-.navbar {
-  background-color: $maroon;
+
+.search-structure{
+  margin: auto;
+  padding: 0;
+  display: flex;
+  vertical-align: middle;
   text-align: center;
-  padding: 10px 14px;
-  font-size: 16px;
 }
+
+.search-style {
+      width: 100%;
+      padding: .5rem .8rem;
+      text-align: center;
+      vertical-align: middle;
+      margin: auto;
+      margin-bottom: 10px;
+      cursor: pointer;
+      background-color: $c1;
+      color: white;
+      text-transform: uppercase;
+      transition: background-color .2s, color .2s, transform .1s;
+      border-radius: 4px;
+
+
+      &:hover {
+        color: white;
+        box-shadow: 0 0 24px rgba(black, .2);
+        background-color: $c1;
+        border-color: $c2;
+        border: 1px solid black;
+      }
+    }
+
 
 nav{
   width: 100vw;
-  background-color: $platinum;
+  background-color: $c3;
 }
 
 
-
 .nav-link {
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-position: under;
   display: block;
-  color: $black;
-  padding: 2vw;
+  color: $white;
+  padding: 2.2vw;
 
   &:hover{
-  background-color: $maroon;
-  color: $platinum ;
+  background-color: $c1;
+  color: $white ;
   }
 }
 
 ul{
-  margin: 0;
+  margin: auto;
   padding: 0;
   display: flex;
 }
 
-body{
-  margin: 0;
-}
-
 li{
   list-style-type: none;
-  margin: 0 2vw;
   font-size: 2vh;
+  margin: auto;
 }
 
 button{
   display: none;
 }
+
+.logo-style {
+  width: 100px;
+  height: 80px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+}
+
 
 @media only screen and (max-width: 500px) {
   ul{
@@ -50,7 +84,7 @@ button{
   }
 
   li{
-    margin: 0;
+    margin: auto;
   }
 
  .nav-link{
