@@ -6,20 +6,12 @@ class CelebritiesController < ApplicationController
     if params[:query].present?
       sql_query = "name ILIKE :query"
       @celebrities = Celebrity.where(sql_query, query: "%#{params[:query]}%")
-    else    
+    else
     @celebrities = Celebrity.all
   end
 end
 
   def show
-    @celebrities = Celebrity.geocoded
-
-    @markers = @celebrities.map do |celebrity|
-      {
-        lat: celebrity.latitude,
-        lng: celebrity.longitude
-      }
-    end
   end
 
   def new
