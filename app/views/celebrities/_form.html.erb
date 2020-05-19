@@ -4,7 +4,7 @@
       <%= simple_form_for(@celebrity) do |f| %>
         <%= f.input :name %>
         <%= f.input :description, as: :text %>
-        <%= f.input :location %>
+        <%= f.input :location, required: true %>
         <%= f.input :price_per_day %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.button :submit, class: "btn btn-primary" %>

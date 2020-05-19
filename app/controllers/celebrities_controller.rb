@@ -6,12 +6,13 @@ class CelebritiesController < ApplicationController
     if params[:query].present?
       sql_query = "name ILIKE :query"
       @celebrities = Celebrity.where(sql_query, query: "%#{params[:query]}%")
-    else    
+    else
     @celebrities = Celebrity.all
   end
 end
 
-  def show; end
+  def show
+  end
 
   def new
     @celebrity = Celebrity.new
