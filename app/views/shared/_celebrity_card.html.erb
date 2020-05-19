@@ -1,11 +1,24 @@
-<div class="card" style="width: 100%;">
-  <% if celebrity.photos.attached? %>
-    <%= cl_image_tag celebrity.photos.first.key, height: 300, width: 400, crop: :fill, style: "width: 100%; object-fit: cover;" %>
-  <% end %>
-  <div class="card-body">
-    <h5 class="card-title"> <%= celebrity.name %> </h5>
-    <p class="card-text"> <%= celebrity.description %> </p>
+<div class = description-border>
+  <div class="card-structure" style="width: 100%;">
+   <div class="container-overlay">
+    <% if celebrity.photos.attached? %>
+      <%= cl_image_tag celebrity.photos.first.key, class: "avatar-style", height: 300, width: 400, crop: :fill, style: "width: 100%; object-fit: cover;" %>
+
+        <div class="overlay">
+          <div class="text">
+            <h5 class = "h5-style"> Price Per Day: </h3>
+            <p class = "p-style"> $<%= celebrity.price_per_day %> </p>
+            <h5 class = "h5-style"> Location: </h3>
+            <p class = "p-style"> <%= celebrity.location %> </p>
+          </div>
+        </div>
+    </div>
+
+    <% end %>
+
+    <h5 class = "h5-style" > <%= celebrity.name %> </h5>
     <%= link_to 'Book', new_celebrity_booking_path(celebrity), class: "button-style" %>
     <%= link_to 'Details', celebrity_path(celebrity), class: "button-style" %>
+
   </div>
 </div>

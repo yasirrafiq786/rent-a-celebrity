@@ -9,11 +9,10 @@
 
 .search-style {
       width: 100%;
-      padding: .5rem .8rem;
+      padding: .2vw;
       text-align: center;
       vertical-align: middle;
       margin: auto;
-      margin-bottom: 10px;
       cursor: pointer;
       background-color: $c1;
       color: white;
@@ -37,13 +36,10 @@ nav{
   background-color: $c3;
 }
 
-
 .nav-link {
-  text-decoration: underline;
-  text-underline-position: under;
   display: block;
   color: $white;
-  padding: 2.2vw;
+  padding: 1vw;
 
   &:hover{
   background-color: $c1;
@@ -59,7 +55,7 @@ ul{
 
 li{
   list-style-type: none;
-  font-size: 2vh;
+  font-size: 2.5vh;
   margin: auto;
 }
 
@@ -70,6 +66,7 @@ button{
 .logo-style {
   width: 100px;
   height: 80px;
+  display:flex
 }
 
 .avatar {
@@ -88,8 +85,12 @@ button{
   }
 
  .nav-link{
-    display: block;
+    display: flex;
   }
+
+  .logo-style {
+  margin: 0;
+}
 
   button{
     display: block;

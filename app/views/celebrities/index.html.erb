@@ -1,12 +1,8 @@
-
-<div class="container">
-  <h1> Celebrities </h1>
-</div>
-
-<div class="container">
-  <div class="cards">
-  <% @celebrities.each do |celebrity| %>
-    <%= render 'shared/celebrity_card', celebrity: celebrity %>
-  <% end %>
-  </div>
+<div class = "container">
+  <h1 class = "h1-style"> Available Celebrities </h1>
+    <div class="cards">
+      <% @celebrities.each do |celebrity| %>
+      <%= render 'shared/celebrity_card', celebrity: celebrity %>
+      <% end %>
+    </div>
 </div>

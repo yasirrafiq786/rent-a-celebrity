@@ -7,17 +7,17 @@
       margin: auto;
       margin-bottom: 10px;
       cursor: pointer;
-      background-color: $maroon;
-      color: $platinum;
+      background-color: $c3;
+      color: white;
       text-transform: uppercase;
       transition: background-color .4s, color .4s, transform .1s;
 
       &:hover {
-        color: $maroon;
+        color: $c2;
         box-shadow: 0 0 24px rgba(black, .2);
-        background-color: $platinum;
-        border-color: maroon;
-        border: 1px solid black;
+        background-color: white;
+        border-color: $c1;
+        border: 3px solid;
       }
     }
 
