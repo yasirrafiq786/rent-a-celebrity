@@ -1,0 +1,30 @@
+<% @celebrities.each do |celebrity|%>
+  <% if celebrity.user == current_user%>
+    <div class="celebrity-container">
+      <%= celebrity.name %>
+      <%= celebrity.location %>
+      <% if celebrity.bookings != []%>
+        <% celebrity.bookings.each do |booking|%>
+          <div class="celebrity-owner-card">
+            <%= booking.user.first_name  %>
+            <%= booking.start_date %> - <%= booking.end_date %>
+            <%= booking.total_price %>
+            <p>
+              <%= link_to 'Confirm', confirm_path(booking), method: :patch %>
+              <%= link_to 'Reject', reject_path(booking), method: :patch %>
+              <%= link_to 'Conclude', conclude_path(booking), method: :patch %>
+              Status: <%= booking.status%>
+            </p>
+          </div>
+        <% end%>
+        <% if celebrity.reviews != [] %>
+          <% celebrity.reviews.each do |review| %>
+            <%= review.content %>
+            (<%= '⭐' * review.rating %>)
+
+          <% end%>
+        <% end%>
+      <% end%>
+    </div>
+  <% end%>
+<% end%>

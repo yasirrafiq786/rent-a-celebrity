@@ -1,27 +1,17 @@
+<% @bookings.each do |booking|%>
+  <% if booking.user == current_user %>
+    <div class="booking-details-card">
+    <%= booking.celebrity.name %> <br>
+    <%= booking.start_date %> - <%= booking.end_date %><br>
+    <%= booking.total_price %><br>
+    <%= booking.status %>
+    
+    
+    
 
-
-  <table class="table table-bordered">
-        <tbody>
-          <thead>
-            <th>Confirmed Bookings</th>
-            <th>Requested Bookings</th>
-          </thead>
-
-          <% @bookings.each do |booking|%>
-            <tr>
-              <td>
-                <% if current_user == booking.user %>
-                <%= link_to booking.celebrity.name, booking_path(booking) %>
-                <%= booking.status %>
-                <% end %>
-              </td>
-              <td>
-                <% if current_user == booking.celebrity.user%>
-                <%= link_to 'Confirm', confirm_path(booking), method: :patch %>
-                <p> Status: <%= booking.status%> </p>
-                <% end %>
-              </td>
-            </tr>
-            <% end %>
-        </tbody>
-      </table>
+    <% if booking.status == 'concluded'%>
+        <%= link_to 'Leave a Review', new_booking_review_path(booking) %>
+    <% end%>
+    </div>
+  <% end%>
+<% end%>
