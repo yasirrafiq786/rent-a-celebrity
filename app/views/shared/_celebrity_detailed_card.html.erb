@@ -13,7 +13,8 @@
         <div>
           <a href="<%= new_celebrity_booking_path(celebrity) %>" class="btn btn-primary">Book</a>
         </div>
-        <div class="card-buttons-layout">
+         <div class="card-buttons-layout">
+         <% if celebrity.user == current_user %>
           <%= link_to edit_celebrity_path(celebrity),
             style: "padding: 8px" do %>
             <i class="fas fa-user-edit"></i>
@@ -24,11 +25,12 @@
               style: "padding: 8px" do %>
             <i class="fas fa-trash"></i>
           <% end %>
+          <% end%>
         </div>
       </div>
     </div>
   </div>
   <div class="map">
-    <%= image_tag("map_filler.jpeg", style: "width: 100%") %>
+    <img src="https://www.travelvictoria.com.au/images/regions/melbourne/map.jpg" style="width: 100%">
   </div>
 </div>
