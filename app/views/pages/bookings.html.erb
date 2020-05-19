@@ -13,12 +13,14 @@
                 <% if current_user == booking.user %>
                 <%= link_to booking.celebrity.name, booking_path(booking) %>
                 <%= booking.status %>
+                   <%= link_to "Speak to host", booking_messages_path(booking) %>
                 <% end %>
               </td>
               <td>
                 <% if current_user == booking.celebrity.user%>
                 <%= link_to 'Confirm', confirm_path(booking), method: :patch %>
                 <p> Status: <%= booking.status%> </p>
+                  <%= link_to "Speak to renter", booking_messages_path(booking) %>
                 <% end %>
               </td>
             </tr>

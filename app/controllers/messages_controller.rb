@@ -7,16 +7,23 @@ def index
   end
 
 def create
+  @chatroom = Chatroom.find_by(name: "master")
   @message = Message.new(message_params)
   @message.booking = @booking
   @message.user = current_user
-  @message.chatroom = Chatroom.find_by(name: "master") 
+  @message.chatroom = @chatroom
   if @message.save
-    redirect_to booking_messages_path(@booking)
+  ChatroomChannel.broadcast_to(
+  @chatroom,
+  render_to_string(partial: "message", locals: { message: @message })
+)
+    redirect_to booking_messages_path(@booking, anchor: "message-#{@message.id}")
   else 
     render "index"
   end 
 end 
+
+
 
 private 
 
