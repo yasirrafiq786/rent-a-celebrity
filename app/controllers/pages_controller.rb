@@ -7,11 +7,29 @@ class PagesController < ApplicationController
     @bookings = Booking.all
   end
 
+  def celebrities
+    @celebrities = Celebrity.all
+  end
+
   def confirm_booking
     @booking = Booking.find(params[:id])
     @booking.status = 'confirmed'
     @booking.update(booking_params)
     redirect_to bookings_path
+  end
+
+  def reject_booking
+    @booking = Booking.find(params[:id])
+    @booking.status = 'rejected'
+    @booking.update(booking_params)
+    redirect_to bookings_path
+  end
+
+  def conclude_booking
+    @booking = Booking.find(params[:id])
+    @booking.status = 'concluded'
+    @booking.update(booking_params)
+    redirect_to mycelebrities_path
   end
 
   private
