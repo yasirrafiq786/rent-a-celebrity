@@ -3,7 +3,11 @@
     <h1>Rent a celebrity <strong>allows</strong> you to rent your very own <strong>celebrity.</strong>!</h1>
     <p>Use up your life savings to spend time with your favorite celebrity!</p>
    <% if user_signed_in? %>
-  <%= link_to "Browse Celebrities", celebrities_path, :class => "btn btn-primary" %>
+  <%= link_to "Browse Collection", celebrities_path, :class => "btn btn-primary" %>
+  <%= link_to "My Celebrities", mycelebrities_path, :class => "btn btn-primary" %>
+  <%= link_to "My Bookings", bookings_path, :class => "btn btn-primary" %>
+  
+  
   <% end %>
   
   </div>
