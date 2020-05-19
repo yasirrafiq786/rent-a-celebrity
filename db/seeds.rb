@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "making a chatroom called master"
+master = Chatroom.create(name: "master")
+puts "chatroom master done"
+
