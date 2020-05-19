@@ -23,8 +23,6 @@ def create
   end 
 end 
 
-
-
 private 
 
 def message_params 
