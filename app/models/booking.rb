@@ -9,6 +9,7 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   after_validation :set_total_price
+  has_many :messages
 
   def start_date_cannot_be_after_end_date
     if start_date > end_date

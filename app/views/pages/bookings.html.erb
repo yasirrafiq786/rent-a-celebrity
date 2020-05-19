@@ -5,13 +5,11 @@
     <%= booking.start_date %> - <%= booking.end_date %><br>
     <%= booking.total_price %><br>
     <%= booking.status %>
-    
-    
-    
-
+    <%= link_to "Speak to host", booking_messages_path(booking) %>
     <% if booking.status == 'concluded'%>
         <%= link_to 'Leave a Review', new_booking_review_path(booking) %>
     <% end%>
     </div>
   <% end%>
 <% end%>
+
