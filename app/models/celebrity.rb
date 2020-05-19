@@ -4,6 +4,7 @@ class Celebrity < ApplicationRecord
   validates :price_per_day, presence: true
   validates :description, presence: true
   validates :photos, presence: true
+  validates :location, presence: true
   has_many_attached :photos
   has_many :bookings, dependent: :destroy
   geocoded_by :location
