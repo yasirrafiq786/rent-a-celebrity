@@ -1,5 +1,4 @@
 .card-detailed {
-
   padding: 8px 24px;
   height: 100%;
   background: white;
@@ -19,6 +18,7 @@
 
 .card-body-container {
   display: flex;
+  flex: 1;
   flex-direction: column;
   height: 100%;
 }
@@ -28,10 +28,11 @@
 }
 
 .card-flex img {
+  flex: 0 0 300px;
   height: 100%;
-  width: 120px;
   object-fit: cover;
   border-radius: 4px;
+  padding: 24px 8px;
 }
 
 .card-buttons-layout {
@@ -41,7 +42,13 @@
 }
 
 .map {
-  padding-bottom: 16px;
+  padding: 8px 24px;
+  flex: 1;
+}
+
+#map {
+  width: 100%;
+  height: 450px;
 }
 
 h3 {
@@ -52,7 +59,24 @@ h5 {
   font-weight: bold;
 }
 
-// .btn {
-//   background-color: $maroon;
-//   color: $cream;
-// }
+@media (max-width: 480px) {
+
+  .card-flex img {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .card-flex {
+    flex-direction: column;
+  }
+
+  .map {
+    padding-bottom: 16px;
+    width: 100%;
+  }
+
+  #map {
+    height: 300px;
+  }
+
+}
