@@ -1,6 +1,6 @@
 <div class="card-detailed" style="width: 100%;">
   <div class="card-flex">
-    <%= cl_image_tag celebrity.photos.first.key, height: 800, width: 600, crop: :fill, style: "width: 250%; object-fit: cover; flex-grow: 0; padding: 24px 8px;" %>
+    <%= cl_image_tag celebrity.photos.first.key, height: 800, width: 600, crop: :fill %>
     <div class="body card-body-container">
       <div class="card-title card-title-detailed">
         <h3 class="card-title"> <%= celebrity.name %> </h5>
@@ -29,15 +29,14 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="map">
-    <div id="map"
-       style="width: 100%; height: 600px;"
-       data-markers="<%=
-         {
-           lat: celebrity.latitude,
-           lng: celebrity.longitude
-         }.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    <div class="map">
+      <div id="map"
+         data-markers="<%=
+           {
+             lat: celebrity.latitude,
+             lng: celebrity.longitude
+           }.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
   </div>
 </div>
