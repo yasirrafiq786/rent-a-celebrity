@@ -11,6 +11,8 @@ class Celebrity < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
-  
+  def avg_rating(array)
+    array.sum.fdiv(array.length)
+  end  
 
 end
