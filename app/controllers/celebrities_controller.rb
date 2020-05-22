@@ -12,6 +12,7 @@ class CelebritiesController < ApplicationController
 end
 
   def show
+    @reviews = Review.where("celebrity_id = ?", params[:id])
   end
 
   def new
@@ -19,10 +20,7 @@ end
   end
 
 
- def edit; end
-
-
-
+  def edit; end
 
   def update
     @celebrity.update(celebrity_params)
@@ -43,6 +41,10 @@ end
   def destroy
     @celebrity.destroy
     redirect_to celebrities_path(@celebrity)
+  end
+
+  def avg_rating(array)
+    array.sum.fdiv(array.length)
   end
 
 private

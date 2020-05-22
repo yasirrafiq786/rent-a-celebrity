@@ -1,6 +1,17 @@
 <div class="container-fluid py-4">
   <%= render 'shared/celebrity_detailed_card', celebrity: @celebrity %>
   <div class="card">
-    <p>Review text will go here</p>
+    <div class="reviews-container">
+    <h2>Reviews</h2>
+    <p>
+    <% @reviews.each do |review| %>
+      <div class="review-container">
+      <%= review.booking.user.first_name %> <br>
+      Rating: <%= "⭐" * review.rating %>
+      <div class="review"><%= review.content %></div>
+      </div>
+    <% end%>
+    </p>
+    </div>
   </div>
 </div>
