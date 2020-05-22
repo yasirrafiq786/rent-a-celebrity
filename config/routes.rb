@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   resources :celebrities do
     resources :bookings, only: [:new, :create]
-    resources :reviews, only: :index
   end
 
   resources :bookings, only: [:show, :edit] do 
