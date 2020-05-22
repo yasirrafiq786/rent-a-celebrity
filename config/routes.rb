@@ -10,16 +10,14 @@ Rails.application.routes.draw do
 
   resources :celebrities do
     resources :bookings, only: [:new, :create]
+    resources :reviews, only: :index
   end
 
   resources :bookings, only: [:show, :edit] do 
     resources :messages, only: [:index, :create]
-  end
-
-  resources :bookings, only: [] do
     resources :reviews, only: [:new, :create]
   end
-  resources :reviews, only: :index
+
   
 
 

@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :celebrity
   has_many :reviews
-  validates :user, uniqueness: {scope: :celebrity}
+  validates :user, uniqueness: {scope: :celebrity, conditions: -> { where.not(status: "concluded")}}
   validates :celebrity, presence: true
   validates :status, inclusion: {in: %w(pending confirmed rejected concluded)}
   validates :start_date, presence: true

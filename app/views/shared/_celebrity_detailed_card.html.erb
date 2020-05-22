@@ -8,6 +8,11 @@
       </div>
       <div class="card-body card-body-info">
         <p class="card-text"> <%= celebrity.description %> </p>
+        <p class="card-text">
+          <% ratings = [] %>
+          <% celebrity.reviews.each { |review| ratings << review.rating}%>
+          Rating: <%= ratings.sum.fdiv(ratings.length).round(2) %>
+        </p>
       </div>
       <div class="card-buttons-layout">
         <div>

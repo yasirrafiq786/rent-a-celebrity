@@ -17,13 +17,6 @@
             </p>
           </div>
         <% end%>
-        <% if celebrity.reviews != [] %>
-          <% celebrity.reviews.each do |review| %>
-            <%= review.content %>
-            (<%= '⭐' * review.rating %>)
-
-          <% end%>
-        <% end%>
       <% end%>
     </div>
   <% end%>
