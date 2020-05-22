@@ -9,6 +9,7 @@
             <%= booking.user.first_name  %>
             <%= booking.start_date %> - <%= booking.end_date %>
             <%= booking.total_price %>
+            <%= link_to "Speak to renter", booking_messages_path(booking) %>
             <p>
               <%= link_to 'Confirm', confirm_path(booking), method: :patch %>
               <%= link_to 'Reject', reject_path(booking), method: :patch %>
