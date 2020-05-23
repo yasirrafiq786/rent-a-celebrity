@@ -7,7 +7,6 @@ def index
   end
 
 def create
-  raise
   @chatroom = Chatroom.find_by(name: "master")
   @message = Message.new(message_params)
   @message.booking = @booking
