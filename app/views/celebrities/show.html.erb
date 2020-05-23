@@ -6,8 +6,8 @@
     <p>
     <% @reviews.each do |review| %>
       <div class="review-container">
-      <%= review.booking.user.first_name %> <br>
-      Rating: <%= "⭐" * review.rating %>
+      <p><strong>Reviewed by: </strong><%= review.booking.user.first_name %> </p>
+      <p><strong>Rating: <%= "⭐" * review.rating %> </strong></p>
       <div class="review"><%= review.content %></div>
       </div>
     <% end%>
