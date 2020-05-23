@@ -1,15 +1,6 @@
 .footer {
-  background: #F4F4F4;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-
-  color: rgba(0,0,0,0.3);
-  text-align: center;
+  background-color: #190061; 
+  color: white;
 }
 .footer-links {
   display: flex;
@@ -31,4 +22,11 @@
 
 .footer-copyright {
   text-align: center;
+}
+h6 {
+  font-family: "Montserrat", "sans-serif";
+  font-size: 1rem;
+}
+.fa-heart {
+  color: red;
 }
