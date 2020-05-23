@@ -1,6 +1,14 @@
-<div class="container">
+<div class="container" style="padding: 36px 0 100px">
   <div class="row">
-    <div class="col-6 offset-sm-2">
+    <div class="col">
+      <h1>Book <%= @celebrity.name %> </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <%= cl_image_tag @celebrity.photos.first.key, height: 800, width: 600, crop: :fill, style: "height: auto; width: 100%;" %>
+    </div>
+    <div class="col-6">
       <%= simple_form_for [celebrity, booking] do |f| %>
         <%= f.input :start_date, as: :date %>
         <%= f.input :end_date, as: :date %>
