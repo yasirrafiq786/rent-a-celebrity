@@ -15,14 +15,14 @@ class PagesController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = 'confirmed'
     @booking.update(booking_params)
-    redirect_to bookings_path
+    redirect_to mycelebrities_path
   end
 
   def reject_booking
     @booking = Booking.find(params[:id])
     @booking.status = 'rejected'
     @booking.update(booking_params)
-    redirect_to bookings_path
+    redirect_to mycelebrities_path
   end
 
   def conclude_booking

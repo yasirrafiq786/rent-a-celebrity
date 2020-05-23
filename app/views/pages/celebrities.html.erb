@@ -1,40 +1,32 @@
 <% @celebrities.each do |celebrity|%>
-    <% if celebrity.user == current_user%>
-      <div class="card-product">
-            <%= cl_image_tag celebrity.photos.first.key, class: "avatar card-product-img" %>
-          <div class="card-product-infos">
-           <div class = "celeb-name-location">  <%= celebrity.name %> , <%= celebrity.location %>
-           </div>
-            <h5> Booking Requests: </h5>
-                <% if celebrity.bookings != [] %>
-                  <% celebrity.bookings.each do |booking|%>
-                  <div class = "booking-details-card">
-                  <% if booking.status != "concluded"  %>
-                <div class = "booking-details-a">
-                  <%= booking.user.first_name  %>
-                  <br>
-                          <%= booking.start_date %> - <%= booking.end_date %>
-                    <h2>  Total Price: </h2>
-                          $<%= booking.total_price %>
-                  </div>
-                  <div class = "booking-details-b">
-                          <%= link_to 'Confirm', confirm_path(booking),method: :patch,  class: "btn btn-success" %>
-                          <%= link_to 'Reject', reject_path(booking), method: :patch, class: "btn btn-danger" %>
-                          <%= link_to 'Conclude', conclude_path(booking), method: :patch, class: "btn btn-info" %>
-                    <h2> Status: <%= booking.status%> </h2>
-                          <%= link_to "Speak to renter", booking_messages_path(booking) %>
-                      <% end %>
-                   </div>
-                  </div>
-                <% end %>
-        <% if celebrity.reviews != [] %>
-          <% celebrity.reviews.each do |review| %>
-            <%= review.content %>
-            (<%= '⭐' * review.rating %>)
-          <% end%>
+  <% if celebrity.user == current_user%>
+    <div class="card-product">
+      <%= cl_image_tag celebrity.photos.first.key, class: "avatar card-product-img" %>
+      <div class="card-product-infos">
+        <div class = "celeb-name-location">  <%= celebrity.name %> , <%= celebrity.location %>
+        </div>
+        <h5> Booking Requests: </h5>
+        <% if celebrity.bookings != [] %>
+          <% celebrity.bookings.each do |booking|%>
+            <div class = "booking-details-card">
+              <div class = "booking-details-a">
+                <%= booking.user.first_name  %>
+                <br>
+                <%= booking.start_date %> - <%= booking.end_date %>
+                <h2>  Total Price: </h2>
+                $<%= booking.total_price %>
+              </div>
+              <div class = "booking-details-b">
+                <%= link_to 'Confirm', confirm_path(booking),method: :patch,  class: "btn btn-success" %>
+                <%= link_to 'Reject', reject_path(booking), method: :patch, class: "btn btn-danger" %>
+                <%= link_to 'Conclude', conclude_path(booking), method: :patch, class: "btn btn-info" %>
+                <h2> Status: <%= booking.status%> </h2>
+                <%= link_to "Speak to renter", booking_messages_path(booking) %>
+              </div>
+            </div>
+          <% end %>
         <% end%>
-      <% end%>
       </div>
     </div>
-    <% end%>
   <% end%>
+<% end%>
