@@ -1,10 +1,11 @@
 <% @bookings.each do |booking|%>
   <% if booking.user == current_user %>
-    <div class="booking-details-card">
-    <%= booking.celebrity.name %> <br>
-    <%= booking.start_date %> - <%= booking.end_date %><br>
-    <%= booking.total_price %><br>
-    <%= booking.status %>
+    <div class="card-product">
+    <div class="new-details-card">
+    Celebrity:<%= booking.celebrity.name %> <br>
+    Dates requested: <%= booking.start_date %> - <%= booking.end_date %><br>
+    Total price: <%= booking.total_price %><br>
+    Status: <%= booking.status %>
     <%= link_to "Speak to host", booking_messages_path(booking) %>
     <% if booking.status == 'concluded'%>
         <%= link_to 'Leave a Review', new_booking_review_path(booking) %>
@@ -12,4 +13,4 @@
     </div>
   <% end%>
 <% end%>
-
+</div>
