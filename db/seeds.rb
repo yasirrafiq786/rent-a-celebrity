@@ -17,8 +17,13 @@ puts "done"
 puts "destroying usernames"
 User.destroy_all
 puts "done"
+puts "Destroying Reviews"
+Review.destroy_all
+puts "Done"
 puts "making a chatroom called master"
 master = Chatroom.create(name: "master")
 puts "chatroom master done"
-User.create!(first_name: "Andy", last_name: "Leong", email: "email@email.com", password: "123456")
-User.create!(first_name: "Yasir", last_name: "Whatever", email: "yasir@email.com", password: "123456")
+puts "Creating Host and Guest User"
+User.create!(first_name:"Host", last_name:"Hospitulus", email:"host@host.com", password:"abc123")
+User.create!(first_name:"Guest", last_name:"Demandus", email:"guest@guest.com", password:"abc123")
+
