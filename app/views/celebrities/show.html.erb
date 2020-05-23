@@ -1,13 +1,13 @@
 <div class="container-fluid py-4">
   <%= render 'shared/celebrity_detailed_card', celebrity: @celebrity %>
-  <div class="card">
+  <div class="card", style="padding: 24px 24px; margin-top: 24px;">
     <div class="reviews-container">
     <h2>Reviews</h2>
     <p>
     <% @reviews.each do |review| %>
       <div class="review-container">
-      <%= review.booking.user.first_name %> <br>
-      Rating: <%= "⭐" * review.rating %>
+      <p><strong>Reviewed by: </strong><%= review.booking.user.first_name %> </p>
+      <p><strong>Rating: <%= "⭐" * review.rating %> </strong></p>
       <div class="review"><%= review.content %></div>
       </div>
     <% end%>
